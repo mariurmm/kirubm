@@ -12,18 +12,22 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.background,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40),
+        padding: const EdgeInsets.only(
+          right: 40,
+          left: 40,
+        ),
         child: Column(
           children: [
-            const Spacer(flex: 3),
+            const Spacer(
+              flex: 3,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              spacing: 12,
+              spacing: 13,
               children: [
-                Image.asset(AppImages.appLogo, width: 68, height: 81),
+                Image.asset(AppImages.appLogo),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 8, top: 29),
+                  padding: const EdgeInsets.only(top: 29, bottom: 8),
                   child: Text(
                     'Kiru',
                     style: TextStyle(
@@ -39,7 +43,9 @@ class LoginScreen extends StatelessWidget {
             ButtonsPanel(),
             const SizedBox(height: 61),
             IconsPanel(),
-            const Spacer(flex: 2),
+            const Spacer(
+              flex: 2
+            )
           ],
         ),
       ),

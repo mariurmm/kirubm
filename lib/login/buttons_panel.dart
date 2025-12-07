@@ -7,7 +7,6 @@ class ButtonsPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      spacing: 12,
       children: [
         SizedBox(
           width: double.infinity,
@@ -15,7 +14,10 @@ class ButtonsPanel extends StatelessWidget {
           child: ElevatedButton(
             onPressed: () {},
             style: ButtonStyle(
-              backgroundColor: WidgetStateProperty.all(AppColors.black),
+              backgroundColor: WidgetStatePropertyAll(AppColors.black),
+              shape: WidgetStatePropertyAll(
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              ),
             ),
             child: Text(
               'Регистрация',
@@ -27,19 +29,68 @@ class ButtonsPanel extends StatelessWidget {
             ),
           ),
         ),
-        TextButton(
-          onPressed: () {},
-          child: Text(
-            'Войти',
-            style: TextStyle(
-              color: AppColors.buttonSecondaryText,
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
+        const SizedBox(height: 12),
+        SizedBox(
+          width: double.infinity,
+          height: 58,
+          child: TextButton(
+            onPressed: () {},
+            child: Text(
+              'Войти',
+              style: TextStyle(
+                color: AppColors.buttonSecondaryText,
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ),
-        
       ],
     );
   }
 }
+
+
+
+// class ButtonsPanel extends StatelessWidget {
+//   const ButtonsPanel({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       spacing: 12,
+//       children: [
+//         SizedBox(
+//           width: double.infinity,
+//           height: 58,
+//           child: ElevatedButton(
+//             onPressed: () {},
+//             style: ButtonStyle(
+//               backgroundColor: WidgetStateProperty.all(AppColors.black),
+//             ),
+//             child: Text(
+//               'Регистрация',
+//               style: TextStyle(
+//                 color: AppColors.buttonPrimaryText,
+//                 fontSize: 20,
+//                 fontWeight: FontWeight.w600,
+//               ),
+//             ),
+//           ),
+//         ),
+//         TextButton(
+//           onPressed: () {},
+//           child: Text(
+//             'Войти',
+//             style: TextStyle(
+//               color: AppColors.buttonSecondaryText,
+//               fontSize: 20,
+//               fontWeight: FontWeight.w600,
+//             ),
+//           ),
+//         ),
+        
+//       ],
+//     );
+//   }
+// }
