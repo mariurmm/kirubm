@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kiru/app_colors.dart';
 
 class ButtonsPanel extends StatelessWidget {
@@ -34,7 +35,9 @@ class ButtonsPanel extends StatelessWidget {
           width: double.infinity,
           height: 58,
           child: TextButton(
-            onPressed: () {},
+            onPressed: () {
+              context.go('/home');
+            },
             child: Text(
               'Войти',
               style: TextStyle(
@@ -49,48 +52,3 @@ class ButtonsPanel extends StatelessWidget {
     );
   }
 }
-
-
-
-// class ButtonsPanel extends StatelessWidget {
-//   const ButtonsPanel({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       spacing: 12,
-//       children: [
-//         SizedBox(
-//           width: double.infinity,
-//           height: 58,
-//           child: ElevatedButton(
-//             onPressed: () {},
-//             style: ButtonStyle(
-//               backgroundColor: WidgetStateProperty.all(AppColors.black),
-//             ),
-//             child: Text(
-//               'Регистрация',
-//               style: TextStyle(
-//                 color: AppColors.buttonPrimaryText,
-//                 fontSize: 20,
-//                 fontWeight: FontWeight.w600,
-//               ),
-//             ),
-//           ),
-//         ),
-//         TextButton(
-//           onPressed: () {},
-//           child: Text(
-//             'Войти',
-//             style: TextStyle(
-//               color: AppColors.buttonSecondaryText,
-//               fontSize: 20,
-//               fontWeight: FontWeight.w600,
-//             ),
-//           ),
-//         ),
-        
-//       ],
-//     );
-//   }
-// }

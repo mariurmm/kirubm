@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kiru/home/home_screen.dart';
-import 'package:kiru/login/login_screen.dart';
+import 'package:kiru/router.dart';
 
 void main() {
   runApp(const KiruApp());
@@ -11,8 +10,8 @@ class KiruApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomeScreen());
+    return MaterialApp.router(
+      routerConfig: router,
+    );
   }
 }
-
-

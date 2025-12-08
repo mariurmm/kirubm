@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kiru/app_colors.dart';
 import 'package:kiru/app_images.dart';
 import 'package:kiru/login/icon_with_background.dart';
+import 'package:kiru/widgets/svg_icon.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -35,6 +37,29 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: (index) {
+          switch (index) {
+            case 0:
+              context.go('/home');
+              break;
+            case 1:
+              context.go('/favorites');
+              break;
+            case 2:
+              context.go('/recommendations');
+              break;
+            default:
+              throw Exception('Invalid index');
+          }
+        },
+        items: [
+          BottomNavigationBarItem(icon: SvgIcon.home(), label: ''),
+          BottomNavigationBarItem(icon: SvgIcon.favorites(), label: ''),
+          BottomNavigationBarItem(icon: SvgIcon.recommendations(), label: ''),
+        ],
+      ),
     );
   }
 }
@@ -60,7 +85,11 @@ class _ProfileCard extends StatelessWidget {
                 height: 84,
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) {
-                  return const Icon(Icons.person, size: 54, color: AppColors.white);
+                  return const Icon(
+                    Icons.person,
+                    size: 54,
+                    color: AppColors.white,
+                  );
                 },
               ),
             ),
@@ -84,9 +113,15 @@ class _ProfileCard extends StatelessWidget {
           const SizedBox(height: 12),
           Row(
             children: [
-              Expanded(child: _Stat(value: '3,8K', label: 'Подписчики')),
-              Expanded(child: _Stat(value: '5,4K', label: 'Лайки')),
-              Expanded(child: _Stat(value: '7', label: 'Публикации')),
+              Expanded(
+                child: _Stat(value: '3,8K', label: 'Подписчики'),
+              ),
+              Expanded(
+                child: _Stat(value: '5,4K', label: 'Лайки'),
+              ),
+              Expanded(
+                child: _Stat(value: '7', label: 'Публикации'),
+              ),
             ],
           ),
           const SizedBox(height: 16),
@@ -101,7 +136,7 @@ class _ProfileCard extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                ),  
+                ),
                 child: const Text(
                   'Редактировать',
                   style: TextStyle(
@@ -111,15 +146,25 @@ class _ProfileCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 10),
-              IconWithBackground(icon: AppImages.messages, color: AppColors.grey),
+              IconWithBackground(
+                icon: AppImages.messages,
+                color: AppColors.grey,
+              ),
               const SizedBox(width: 10),
-              IconWithBackground(icon: AppImages.instagram, color: AppColors.grey),
+              IconWithBackground(
+                icon: AppImages.instagram,
+                color: AppColors.grey,
+              ),
             ],
           ),
           const SizedBox(height: 14),
           const Text(
             'Сотворю твой успех с помощью 100+ огненных образов. Моим капсулами пользуются более 2500 девушек — присоединяйся и ты!',
-            style: TextStyle(fontSize: 13.5, color: Colors.black87, height: 1.35),
+            style: TextStyle(
+              fontSize: 13.5,
+              color: Colors.black87,
+              height: 1.35,
+            ),
             textAlign: TextAlign.center,
           ),
         ],
@@ -147,13 +192,7 @@ class _Stat extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 4),
-        Text(
-          label,
-          style: const TextStyle(
-            fontSize: 12,
-            color: Colors.grey,
-          ),
-        ),
+        Text(label, style: const TextStyle(fontSize: 12, color: Colors.grey)),
       ],
     );
   }
@@ -176,7 +215,9 @@ class _PostsSection extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.grey,
               elevation: 0,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -202,10 +243,7 @@ class _PostsSection extends StatelessWidget {
 }
 
 class _PostGrid extends StatelessWidget {
-  static const List<String> _mockImages = [
-    AppImages.post1,
-    AppImages.post2,
-  ];
+  static const List<String> _mockImages = [AppImages.post1, AppImages.post2];
 
   @override
   Widget build(BuildContext context) {
