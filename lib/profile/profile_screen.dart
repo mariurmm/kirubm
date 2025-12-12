@@ -259,7 +259,7 @@ class _PostGrid extends StatelessWidget {
                 imagePath,
                 width: double.infinity,
                 height: 213,
-                fit: BoxFit.contain,
+                fit: BoxFit.cover, 
               ),
               Positioned(
                 bottom: 8,
