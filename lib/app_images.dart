@@ -15,4 +15,6 @@ class AppImages {
   static const String camera = 'assets/icons/camera.png';
   static const String verified = 'assets/icons/verified.png';
   static const String messages = 'assets/icons/messages.png';
+
+  
 }

@@ -1,0 +1,73 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter widget-preview start --machine --web-server --dtd-url ws://127.0.0.1:57107/iFmpEiPeJWQ= --devtools-server-address http://127.0.0.1:9100/
+
+## exception
+
+PathNotFoundException: PathNotFoundException: Cannot open file, path = 'C:\Users\mariurmm\kiru\.dart_tool\widget_preview_scaffold\lib\src\generated_preview.dart' (OS Error: Системе не удается найти указанный путь.
+, errno = 3)
+
+```
+#0      _File.throwIfError (dart:io/file_impl.dart:783:7)
+#1      _File.openSync (dart:io/file_impl.dart:576:5)
+#2      _File.writeAsBytesSync (dart:io/file_impl.dart:748:31)
+#3      _File.writeAsStringSync (dart:io/file_impl.dart:776:5)
+#4      ForwardingFile.writeAsStringSync (package:file/src/forwarding/forwarding_file.dart:150:16)
+#5      ErrorHandlingFile.writeAsStringSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:254:22)
+#6      _runSync (package:flutter_tools/src/base/error_handling_io.dart:552:14)
+#7      ErrorHandlingFile.writeAsStringSync (package:flutter_tools/src/base/error_handling_io.dart:253:5)
+#8      PreviewCodeGenerator.populatePreviewsInGeneratedPreviewScaffold (package:flutter_tools/src/widget_preview/preview_code_generator.dart:120:26)
+#9      WidgetPreviewStartCommand.onChangeDetected (package:flutter_tools/src/commands/widget_preview.dart:355:27)
+#10     PreviewDetector._onFileSystemEvent.<anonymous closure> (package:flutter_tools/src/widget_preview/preview_detector.dart:168:23)
+<asynchronous suspension>
+#11     PreviewDetectorMutex.runGuarded (package:flutter_tools/src/widget_preview/utils.dart:99:14)
+<asynchronous suspension>
+#12     PreviewDetector._onFileSystemEvent (package:flutter_tools/src/widget_preview/preview_detector.dart:118:5)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.38.1, on Microsoft Windows [Version 10.0.19045.5131], locale ru-RU) [192ms]
+    • Flutter version 3.38.1 on channel stable at C:\Users\mariurmm\develop\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision b45fa18946 (4 weeks ago), 2025-11-12 22:09:06 -0600
+    • Engine revision b5990e5ccc
+    • Dart version 3.10.0
+    • DevTools version 2.51.1
+    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, omit-legacy-version-file, enable-lldb-debugging
+
+[✓] Windows Version (Њ ©Єа®б®дв Windows 10 Pro 64-а §ап¤­ п, 22H2, 2009) [1 646ms]
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 36.1.0) [1 871ms]
+    • Android SDK at C:\Users\mariurmm\AppData\Local\Android\sdk
+    • Emulator version 36.2.12.0 (build_id 14214601) (CL:N/A)
+    • Platform android-36, build-tools 36.1.0
+    • Java binary at: C:\Program Files\Android\Android Studio\jbr\bin\java
+      This is the JDK bundled with the latest Android Studio installation on this machine.
+      To manually set the JDK path, use: `flutter config --jdk-dir="path/to/jdk"`.
+    • Java version OpenJDK Runtime Environment (build 21.0.8+-14196175-b1038.72)
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web [54ms]
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[✓] Visual Studio - develop Windows apps (Visual Studio Community 2022 17.13.1) [53ms]
+    • Visual Studio at C:\Program Files\Microsoft Visual Studio\2022\Community
+    • Visual Studio Community 2022 version 17.13.35818.85
+    • Windows 10 SDK version 10.0.22621.0
+
+[✓] Connected device (3 available) [214ms]
+    • sdk gphone64 x86 64 (mobile) • emulator-5554 • android-x64    • Android 16 (API 36) (emulator)
+    • Windows (desktop)            • windows       • windows-x64    • Microsoft Windows [Version 10.0.19045.5131]
+    • Chrome (web)                 • chrome        • web-javascript • Google Chrome 143.0.7499.40
+
+[✓] Network resources [867ms]
+    • All expected network resources are available.
+
+• No issues found!
+```

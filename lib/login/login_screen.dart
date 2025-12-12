@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kiru/app_colors.dart';
-import 'package:kiru/app_images.dart';
 import 'package:kiru/login/buttons_panel.dart';
 import 'package:kiru/login/icons_panel.dart';
 import 'package:kiru/widgets/svg_icon.dart';
@@ -13,15 +12,10 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.background,
       body: Padding(
-        padding: const EdgeInsets.only(
-          right: 40,
-          left: 40,
-        ),
+        padding: const EdgeInsets.only(right: 40, left: 40),
         child: Column(
           children: [
-            const Spacer(
-              flex: 3,
-            ),
+            const Spacer(flex: 3),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 13,
@@ -32,7 +26,8 @@ class LoginScreen extends StatelessWidget {
                   child: Text(
                     'Kiru',
                     style: TextStyle(
-                      color: AppColors.black, fontSize: 36,
+                      color: AppColors.black,
+                      fontSize: 36,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -43,9 +38,7 @@ class LoginScreen extends StatelessWidget {
             ButtonsPanel(),
             const SizedBox(height: 61),
             IconsPanel(),
-            const Spacer(
-              flex: 2
-            )
+            const Spacer(flex: 2),
           ],
         ),
       ),

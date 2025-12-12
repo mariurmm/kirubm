@@ -37,6 +37,10 @@ class SvgIcon extends StatelessWidget {
     : icon = 'assets/icons/profile.svg',
       color = AppColors.black;
 
+  const SvgIcon.search({super.key, this.width = 24, this.height = 24})
+    : icon = 'assets/icons/search.svg',
+      color = AppColors.black;
+
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(icon);
