@@ -3,7 +3,7 @@ Please report a bug at https://github.com/flutter/flutter/issues.
 
 ## command
 
-flutter widget-preview start --machine --web-server --dtd-url ws://127.0.0.1:57107/iFmpEiPeJWQ= --devtools-server-address http://127.0.0.1:9100/
+flutter widget-preview start --machine --web-server --dtd-url ws://127.0.0.1:61098/_ZoU33WDiKw= --devtools-server-address http://127.0.0.1:9100/
 
 ## exception
 
@@ -32,18 +32,18 @@ PathNotFoundException: PathNotFoundException: Cannot open file, path = 'C:\Users
 ## flutter doctor
 
 ```
-[✓] Flutter (Channel stable, 3.38.1, on Microsoft Windows [Version 10.0.19045.5131], locale ru-RU) [192ms]
+[✓] Flutter (Channel stable, 3.38.1, on Microsoft Windows [Version 10.0.19045.5131], locale ru-RU) [226ms]
     • Flutter version 3.38.1 on channel stable at C:\Users\mariurmm\develop\flutter
     • Upstream repository https://github.com/flutter/flutter.git
-    • Framework revision b45fa18946 (4 weeks ago), 2025-11-12 22:09:06 -0600
+    • Framework revision b45fa18946 (5 weeks ago), 2025-11-12 22:09:06 -0600
     • Engine revision b5990e5ccc
     • Dart version 3.10.0
     • DevTools version 2.51.1
     • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, omit-legacy-version-file, enable-lldb-debugging
 
-[✓] Windows Version (Њ ©Єа®б®дв Windows 10 Pro 64-а §ап¤­ п, 22H2, 2009) [1 646ms]
+[✓] Windows Version (Њ ©Єа®б®дв Windows 10 Pro 64-а §ап¤­ п, 22H2, 2009) [2,5s]
 
-[✓] Android toolchain - develop for Android devices (Android SDK version 36.1.0) [1 871ms]
+[✓] Android toolchain - develop for Android devices (Android SDK version 36.1.0) [2,3s]
     • Android SDK at C:\Users\mariurmm\AppData\Local\Android\sdk
     • Emulator version 36.2.12.0 (build_id 14214601) (CL:N/A)
     • Platform android-36, build-tools 36.1.0
@@ -53,20 +53,20 @@ PathNotFoundException: PathNotFoundException: Cannot open file, path = 'C:\Users
     • Java version OpenJDK Runtime Environment (build 21.0.8+-14196175-b1038.72)
     • All Android licenses accepted.
 
-[✓] Chrome - develop for the web [54ms]
+[✓] Chrome - develop for the web [65ms]
     • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
 
-[✓] Visual Studio - develop Windows apps (Visual Studio Community 2022 17.13.1) [53ms]
+[✓] Visual Studio - develop Windows apps (Visual Studio Community 2022 17.13.1) [64ms]
     • Visual Studio at C:\Program Files\Microsoft Visual Studio\2022\Community
     • Visual Studio Community 2022 version 17.13.35818.85
     • Windows 10 SDK version 10.0.22621.0
 
-[✓] Connected device (3 available) [214ms]
+[✓] Connected device (3 available) [170ms]
     • sdk gphone64 x86 64 (mobile) • emulator-5554 • android-x64    • Android 16 (API 36) (emulator)
     • Windows (desktop)            • windows       • windows-x64    • Microsoft Windows [Version 10.0.19045.5131]
-    • Chrome (web)                 • chrome        • web-javascript • Google Chrome 143.0.7499.40
+    • Chrome (web)                 • chrome        • web-javascript • Google Chrome 143.0.7499.42
 
-[✓] Network resources [867ms]
+[✓] Network resources [467ms]
     • All expected network resources are available.
 
 • No issues found!
