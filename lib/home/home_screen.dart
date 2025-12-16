@@ -80,26 +80,29 @@ class _PostGrid extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: 14,
-        mainAxisSpacing: 12,
-        mainAxisExtent: 340,
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 14,
+        mainAxisExtent: 332,
       ),
       itemCount: 4,
       itemBuilder: (context, index) {
         final imagePath = _mockImages[index % _mockImages.length];
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Stack(
-                children: [
-                  Image.asset(
-                    imagePath,
-                    width: 170,
-                    height: 290,
-                    fit: BoxFit.cover,
-                  ),
+        return LayoutBuilder(
+          builder: (context, constraints) {
+            final cardWidth = constraints.maxWidth;
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Stack(
+                    children: [
+                      Image.asset(
+                        imagePath,
+                        width: cardWidth,
+                        height: 290,
+                        fit: BoxFit.cover,
+                      ),
                   Positioned(
                     bottom: 8,
                     right: 8,
@@ -122,21 +125,26 @@ class _PostGrid extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 8),
+            const SizedBox(height: 6),
 
             Row(
               children: [
-                ClipOval(
-                  child: Image.asset(
-                    AppImages.post1,
-                    width: 36,
-                    height: 36,
-                    fit: BoxFit.cover,
+                Container(
+                  width: 36,
+                  height: 36,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.grey,
+                  ),
+                  child: ClipOval(
+                    child: Image.asset(
+                      AppImages.post1,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
-                const SizedBox(width: 8), 
-                SizedBox(
-                  width: 170 - 36 - 8, 
+                const SizedBox(width: 8),
+                Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
@@ -170,6 +178,8 @@ class _PostGrid extends StatelessWidget {
               ],
             ),
           ],
+        );
+          },
         );
       },
     );
