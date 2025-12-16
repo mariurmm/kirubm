@@ -24,15 +24,21 @@ class ProfileScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          children: [
-            _ProfileCard(),
-            const SizedBox(height: 20),
-            _PostsSection(),
-            const SizedBox(height: 24),
-          ],
+      body: ScrollConfiguration(
+        behavior: const ScrollBehavior().copyWith(
+          overscroll: false,
+          scrollbars: false,
+        ),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            children: [
+              _ProfileCard(),
+              const SizedBox(height: 20),
+              _PostsSection(),
+              const SizedBox(height: 24),
+            ],
+          ),
         ),
       ),
     );
@@ -66,16 +72,17 @@ class _ProfileCard extends StatelessWidget {
                         const Text(
                           'BloodStyle',
                           style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 17, //14
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: -0.25,
                             color: Colors.black,
                           ),
                         ),
                         const SizedBox(width: 6),
-                        Image.asset(AppImages.verified, width: 18, height: 18),
+                        Image.asset(AppImages.verified, width: 12, height: 12),
                       ],
                     ),
-                    const SizedBox(height: 12),
+                    const SizedBox(height: 10),
                     Row(
                       children: [
                         Expanded(
@@ -89,7 +96,7 @@ class _ProfileCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -105,8 +112,8 @@ class _ProfileCard extends StatelessWidget {
                           child: const Text(
                             'Редактировать',
                             style: TextStyle(
+                              fontWeight: FontWeight.w700,
                               color: Colors.black,
-                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ),
@@ -177,13 +184,24 @@ class _Stat extends StatelessWidget {
         Text(
           value,
           style: const TextStyle(
-            fontSize: 15,
+            fontSize: 19, //16
             fontWeight: FontWeight.w700,
+            height: 1.0,
+            letterSpacing: 0,
             color: Colors.black,
           ),
         ),
         const SizedBox(height: 4),
-        Text(label, style: const TextStyle(fontSize: 12, color: Colors.grey)),
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 12, //10
+            fontWeight: FontWeight.w500,
+            height: 1.0,
+            letterSpacing: 0,
+            color: Colors.grey,
+          ),
+        ),
       ],
     );
   }
@@ -217,9 +235,13 @@ class _PostsSection extends StatelessWidget {
                 Icon(Icons.add_circle, color: AppColors.black, size: 18),
                 const Text(
                   'Опубликовать',
+                  textAlign:
+                      TextAlign.center,
                   style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: -0.25, 
                     color: Colors.black,
-                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ],
@@ -243,8 +265,8 @@ class _PostGrid extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: 8,
-        mainAxisSpacing: 8,
+        crossAxisSpacing: 14,
+        mainAxisSpacing: 14,
         mainAxisExtent: 213,
       ),
       itemCount: 6,
@@ -259,7 +281,7 @@ class _PostGrid extends StatelessWidget {
                 imagePath,
                 width: double.infinity,
                 height: 213,
-                fit: BoxFit.cover, 
+                fit: BoxFit.cover,
               ),
               Positioned(
                 bottom: 8,
@@ -268,11 +290,11 @@ class _PostGrid extends StatelessWidget {
                   width: 20,
                   height: 20,
                   decoration: BoxDecoration(
-                    color: const Color(0x80000000),
+                    color: AppColors.grey,
                     shape: BoxShape.circle,
                   ),
                   alignment: Alignment.center,
-                  child: Icon(Icons.favorite, color: Colors.white, size: 10),
+                  child: Icon(Icons.favorite, color: Colors.black, size: 10),
                 ),
               ),
             ],

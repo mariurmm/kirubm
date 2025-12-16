@@ -23,8 +23,8 @@ class HomeScreen extends StatelessWidget {
                 'Подписки',
                 style: TextStyle(
                   color: AppColors.buttonSecondaryText,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 14, //12
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ),
@@ -43,8 +43,8 @@ class HomeScreen extends StatelessWidget {
                 'Рекомендации',
                 style: TextStyle(
                   color: AppColors.buttonPrimaryText,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 14, //12
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ),
@@ -52,8 +52,16 @@ class HomeScreen extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Column(children: [_PostsSection(), const SizedBox(height: 24)]),
+      body: ScrollConfiguration(
+        behavior: const ScrollBehavior().copyWith(
+          overscroll: false,
+          scrollbars: false,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [_PostsSection(), const SizedBox(height: 24)],
+          ),
+        ),
       ),
     );
   }
@@ -80,7 +88,7 @@ class _PostGrid extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: 8,
+        crossAxisSpacing: 14,
         mainAxisSpacing: 14,
         mainAxisExtent: 332,
       ),
@@ -103,82 +111,105 @@ class _PostGrid extends StatelessWidget {
                         height: 290,
                         fit: BoxFit.cover,
                       ),
-                  Positioned(
-                    bottom: 8,
-                    right: 8,
-                    child: Container(
-                      width: 20,
-                      height: 20,
-                      decoration: const BoxDecoration(
-                        color: Color(0x80000000),
-                        shape: BoxShape.circle,
-                      ),
-                      alignment: Alignment.center,
-                      child: const Icon(
-                        Icons.favorite,
-                        color: Colors.white,
-                        size: 10,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 6),
-
-            Row(
-              children: [
-                Container(
-                  width: 36,
-                  height: 36,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.grey,
-                  ),
-                  child: ClipOval(
-                    child: Image.asset(
-                      AppImages.post1,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        'Звезда Токио',
-                        style: TextStyle(
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14,
-                          height: 1.0,
-                          letterSpacing: 0,
+                      Positioned(
+                        bottom: 8,
+                        right: 8,
+                        child: Container(
+                          width: 20,
+                          height: 20,
+                          decoration: BoxDecoration(
+                            color: AppColors.grey,
+                            shape: BoxShape.circle,
+                          ),
+                          alignment: Alignment.center,
+                          child: Icon(
+                            Icons.favorite,
+                            color: Colors.black,
+                            size: 10,
+                          ),
                         ),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      SizedBox(height: 2),
-                      Text(
-                        'HummusChan19',
-                        style: TextStyle(
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                          height: 1.0,
-                          letterSpacing: 0,
-                          color: Colors.grey,
-                        ),
-                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ),
                 ),
+
+                const SizedBox(height: 6),
+
+                Row(
+                  children: [
+                    Container(
+                      width: 36,
+                      height: 36,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.grey,
+                      ),
+                      child: ClipOval(
+                        child: Image.asset(
+                          AppImages.profileAvatar,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              const Text(
+                                'Звезда Токио',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 17, //14
+                                  height: 1.0,
+                                  letterSpacing: 0,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              const SizedBox(width: 4),
+                              const Text(
+                                'от',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 17, //14
+                                  height: 1.0,
+                                  letterSpacing: 0,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
+                          ),
+
+                          const SizedBox(height: 2),
+                          Row(
+                            children: [
+                              const Text(
+                                'HummusChan19',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 14, //12
+                                  height: 1.0,
+                                  letterSpacing: 0,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              const SizedBox(width: 4),
+                              Image.asset(
+                                AppImages.verified,
+                                width: 10,
+                                height: 10,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ],
-            ),
-          ],
-        );
+            );
           },
         );
       },

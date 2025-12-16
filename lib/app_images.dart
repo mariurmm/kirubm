@@ -4,6 +4,8 @@ class AppImages {
   static const String profileAvatar = 'assets/images/profile_avatar.png';
   static const String post1 = 'assets/images/post_1.png';
   static const String post2 = 'assets/images/post_2.png';
+  static const String item1 = 'assets/images/item_1.png';
+  static const String item2 = 'assets/images/item_2.png';
 
   // Icons
   static const String google = 'assets/icons/google.png';
@@ -15,6 +17,5 @@ class AppImages {
   static const String camera = 'assets/icons/camera.png';
   static const String verified = 'assets/icons/verified.png';
   static const String messages = 'assets/icons/messages.png';
-
-  
+  static const String add = 'assets/icons/add.png';
 }

@@ -17,15 +17,23 @@ class FavoritesScreen extends StatelessWidget {
         title: const Text(
           'Избранное',
           style: TextStyle(
-            fontSize: 17,
+            fontSize: 19, //16
             fontWeight: FontWeight.w700,
             color: Colors.black,
           ),
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Column(children: [_PostsSection(), const SizedBox(height: 24)]),
+      body: ScrollConfiguration(
+        behavior: const ScrollBehavior().copyWith(
+          overscroll: false,
+          scrollbars: false,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [_PostsSection(), const SizedBox(height: 24)],
+          ),
+        ),
       ),
     );
   }
@@ -54,14 +62,13 @@ class _PostGrid extends StatelessWidget {
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         crossAxisSpacing: 14,
-        mainAxisSpacing: 8,
+        mainAxisSpacing: 14,
         mainAxisExtent: 240,
       ),
       itemCount: 6,
       itemBuilder: (context, index) {
         final imagePath = _mockImages[index % _mockImages.length];
-        return Container(
-          child: ClipRRect(
+        return ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Stack(
               fit: StackFit.expand,
@@ -79,17 +86,16 @@ class _PostGrid extends StatelessWidget {
                     width: 20,
                     height: 20,
                     decoration: BoxDecoration(
-                      color: const Color(0x80000000),
+                      color: AppColors.grey,
                       shape: BoxShape.circle,
                     ),
                     alignment: Alignment.center,
-                    child: Icon(Icons.favorite, color: Colors.white, size: 10),
+                    child: Icon(Icons.favorite, color: Colors.black, size: 10),
                   ),
                 ),
               ],
             ),
-          ),
-        );
+          );
       },
     );
   }
