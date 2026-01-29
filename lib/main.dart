@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kiru/router.dart';
+import 'package:kiru/core/router/router.dart';
 
 void main() {
   runApp(const KiruApp());
